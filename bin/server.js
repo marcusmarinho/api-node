@@ -1,8 +1,3 @@
-'use strict';
-// Faz uma análise criteriosa no arquivo, de acordo com a sintaxe
-/* const xpto = require('./teste') // Indica que o caminho vem de uma pasta específica
-e nao do Node Modules */
-
 const http = require('http'); // Servidor HTTP
 const app = require('../src/app');
 
@@ -12,27 +7,24 @@ app.set('port', port);
 // Criar o servidor http utilizando o modelo MVC do Express
 const server = http.createServer(app);
 
-server.listen(port);
-server.on('error', onError); // Se der erro, chama a função de erro
-server.on('listening', onListening);
-console.log(`API rodando na porta ${port}`);
-
-// Função do Express
 function normalizePort(val) {
-  const port = parseInt(val, 10);
+  const porta = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (isNaN(porta)) {
     return val;
   }
 
-  if (port >= 0) {
-    return port;
+  if (porta >= 0) {
+    return porta;
   }
 
   return false;
 }
 
-// Função do Express
+function onListening() {
+  const addr = server.address();
+}
+
 function onError(error) {
   if (error.syscall !== 'listen') {
     throw error;
@@ -55,7 +47,8 @@ function onError(error) {
       throw error;
   }
 }
-// Função listening
-function onListening() {
-  const addr = server.address();
-}
+
+server.listen(port);
+server.on('error', onError); // Se der erro, chama a função de erro
+server.on('listening', onListening);
+console.log(`API rodando na porta ${port}`);
