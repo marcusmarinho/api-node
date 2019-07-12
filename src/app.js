@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 mongoose.set('useCreateIndex', true);
+mongoose.set('useFindAndModify', false);
 
 const app = express();
 
@@ -11,6 +12,8 @@ mongoose.connect('mongodb+srv://melissa:usermel2019@cluster0-inujy.mongodb.net/n
 
 // Carrega os Models
 const Product = require('./models/product');
+const Customer = require('./models/customer');
+const Order = require('./models/order');
 
 // Carrega as rotas
 const indexRoute = require('./routes/index-route');
