@@ -4,6 +4,6 @@ global.EMAIL_TMPL = 'Olá, <strong>{0}</strong>, seja bem vindo à Node Store!';
 
 module.exports = {
     connectionString: 'mongodb+srv://melissa:usermel2019@cluster0-inujy.mongodb.net/ndstr?retryWrites=true&w=majority',
-    sendgridKey: 'TBD', //Usado para enviar email
+    sendgridKey: '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', //Usado para enviar email
     containerConnectionString: 'SUA CONNECTION STRING' // Usado para armazenar as imagens do produto
 }

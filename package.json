@@ -16,7 +16,8 @@
     "http": "0.0.0",
     "lodash": "^4.17.14",
     "md5": "^2.2.1",
-    "mongoose": "^5.6.4"
+    "mongoose": "^5.6.4",
+    "sendgrid": "^2.0.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
