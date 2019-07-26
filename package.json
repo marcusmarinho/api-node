@@ -15,6 +15,7 @@
     "guid": "0.0.12",
     "http": "0.0.0",
     "lodash": "^4.17.14",
+    "md5": "^2.2.1",
     "mongoose": "^5.6.4"
   },
   "devDependencies": {

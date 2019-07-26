@@ -1,6 +1,7 @@
 const express = require('express'); // Express - modulo do Node para criar um MVC
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const config = require('./config');
 
 mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
@@ -8,7 +9,7 @@ mongoose.set('useFindAndModify', false);
 const app = express();
 
 // Conecta ao banco
-mongoose.connect('mongodb+srv://melissa:usermel2019@cluster0-inujy.mongodb.net/ndstr?retryWrites=true&w=majority', { useNewUrlParser: true });
+mongoose.connect(config.connectionString, { useNewUrlParser: true });
 
 // Carrega os Models
 const Product = require('./models/product');
